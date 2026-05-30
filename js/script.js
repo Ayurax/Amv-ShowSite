@@ -4,7 +4,6 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const headerHeight = () =>
   document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
 
-let lenisScroller = null;
 let closeMobileMenu = () => {};
 
 const parseDatasetArray = (value) => {
@@ -52,15 +51,6 @@ const getStaggerDelay = (index, total, staggerFrom, staggerDuration) => {
 
 const scrollToTarget = (target) => {
   const offset = headerHeight() + 14;
-
-  if (lenisScroller && typeof lenisScroller.scrollTo === "function") {
-    lenisScroller.scrollTo(target, {
-      offset: -offset,
-      duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-    });
-    return;
-  }
 
   const top = target.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({
@@ -121,84 +111,13 @@ const initMenuToggle = () => {
   });
 };
 
-const initDock = () => {
-  const dock = document.querySelector("[data-dock]");
-
-  if (!dock) return;
-
-  const dockItems = [...dock.querySelectorAll(".dock-nav__item")].map((item) => ({
-    element: item,
-    current: 40,
-    velocity: 0,
-  }));
-
-  let mouseX = Number.POSITIVE_INFINITY;
-  let animationFrame = 0;
-
-  const getTargetWidth = (distance) => {
-    if (!Number.isFinite(mouseX)) return 40;
-    const absDistance = Math.abs(distance);
-    if (absDistance >= 150) return 40;
-    return 80 - (absDistance / 150) * 40;
-  };
-
-  const animateDock = () => {
-    let needsAnotherFrame = false;
-
-    dockItems.forEach((item) => {
-      const bounds = item.element.getBoundingClientRect();
-      const center = bounds.left + bounds.width / 2;
-      const target = getTargetWidth(mouseX - center);
-      const force = (target - item.current) * 0.18;
-
-      item.velocity = (item.velocity + force) * 0.72;
-      item.current += item.velocity;
-
-      if (Math.abs(target - item.current) < 0.02 && Math.abs(item.velocity) < 0.02) {
-        item.current = target;
-        item.velocity = 0;
-      }
-
-      const iconScale = 1 + ((item.current - 40) / 40) * 0.5;
-      item.element.style.setProperty("--dock-size", `${item.current.toFixed(2)}px`);
-      item.element.style.setProperty("--dock-icon-scale", iconScale.toFixed(3));
-
-      if (Math.abs(target - item.current) >= 0.02 || Math.abs(item.velocity) >= 0.02) {
-        needsAnotherFrame = true;
-      }
-    });
-
-    if (needsAnotherFrame) {
-      animationFrame = window.requestAnimationFrame(animateDock);
-    } else {
-      animationFrame = 0;
-    }
-  };
-
-  const requestDockAnimation = () => {
-    if (!animationFrame) {
-      animationFrame = window.requestAnimationFrame(animateDock);
-    }
-  };
-
-  dock.addEventListener("pointermove", (event) => {
-    mouseX = event.clientX;
-    requestDockAnimation();
-  });
-
-  dock.addEventListener("pointerleave", () => {
-    mouseX = Number.POSITIVE_INFINITY;
-    requestDockAnimation();
-  });
-
-  requestDockAnimation();
-};
-
 const initHeroIntro = () => {
   const floatingItems = [...document.querySelectorAll(".hero-float__item")];
+  const badge = document.querySelector('[data-hero-intro="badge"]');
   const title = document.querySelector('[data-hero-intro="title"]');
   const copy = document.querySelector('[data-hero-intro="copy"]');
   const actions = document.querySelector('[data-hero-intro="actions"]');
+  const stats = document.querySelector('[data-hero-intro="stats"]');
 
   if (!window.gsap || prefersReducedMotion) {
     floatingItems.forEach((item) => {
@@ -212,21 +131,31 @@ const initHeroIntro = () => {
   floatingItems.forEach((item) => {
     gsap.fromTo(
       item,
-      { autoAlpha: 0 },
+      { autoAlpha: 0, y: 14, scale: 0.96 },
       {
         autoAlpha: 1,
-        duration: 0.2,
-        ease: "power2.out",
+        y: 0,
+        scale: 1,
+        duration: 0.85,
+        ease: "power4.out",
         delay: Number(item.dataset.introDelay || "0"),
       }
     );
   });
 
+  if (badge) {
+    gsap.fromTo(
+      badge,
+      { autoAlpha: 0, y: 14 },
+      { autoAlpha: 1, y: 0, duration: 0.68, ease: "power4.out", delay: 0.2 }
+    );
+  }
+
   if (title) {
     gsap.fromTo(
       title,
       { autoAlpha: 0, y: 20 },
-      { autoAlpha: 1, y: 0, duration: 0.2, ease: "power2.out", delay: 0.3 }
+      { autoAlpha: 1, y: 0, duration: 0.78, ease: "power4.out", delay: 0.34 }
     );
   }
 
@@ -234,7 +163,7 @@ const initHeroIntro = () => {
     gsap.fromTo(
       copy,
       { autoAlpha: 0, y: 20 },
-      { autoAlpha: 1, y: 0, duration: 0.2, ease: "power2.out", delay: 0.5 }
+      { autoAlpha: 1, y: 0, duration: 0.78, ease: "power4.out", delay: 0.5 }
     );
   }
 
@@ -242,7 +171,15 @@ const initHeroIntro = () => {
     gsap.fromTo(
       actions,
       { autoAlpha: 0, y: 20 },
-      { autoAlpha: 1, y: 0, duration: 0.2, ease: "power2.out", delay: 0.7 }
+      { autoAlpha: 1, y: 0, duration: 0.78, ease: "power4.out", delay: 0.66 }
+    );
+  }
+
+  if (stats) {
+    gsap.fromTo(
+      stats,
+      { autoAlpha: 0, y: 20 },
+      { autoAlpha: 1, y: 0, duration: 0.78, ease: "power4.out", delay: 0.82 }
     );
   }
 };
@@ -262,8 +199,8 @@ const initFloatingHero = () => {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   };
-  const sensitivity = -0.5;
-  const easingFactor = 0.05;
+  const sensitivity = -0.32;
+  const easingFactor = 0.08;
   let isActive = false;
   let frameId = 0;
 
@@ -283,8 +220,8 @@ const initFloatingHero = () => {
 
     items.forEach((item) => {
       const strength = (item.depth * sensitivity) / 20;
-      const targetX = mousePosition.x * strength;
-      const targetY = mousePosition.y * strength;
+      const targetX = (mousePosition.x - floatingRoot.offsetWidth / 2) * strength;
+      const targetY = (mousePosition.y - floatingRoot.offsetHeight / 2) * strength;
       const dx = targetX - item.current.x;
       const dy = targetY - item.current.y;
 
@@ -447,100 +384,6 @@ const initTextRotate = () => {
   });
 };
 
-const initParallaxFallback = () => {
-  const triggerElement = document.querySelector("[data-parallax-layers]");
-
-  if (!triggerElement || prefersReducedMotion) return;
-
-  const layers = [
-    { selector: '[data-parallax-layer="1"]', amount: 70 },
-    { selector: '[data-parallax-layer="2"]', amount: 55 },
-    { selector: '[data-parallax-layer="3"]', amount: 40 },
-    { selector: '[data-parallax-layer="4"]', amount: 10 },
-  ];
-
-  let frame = 0;
-
-  const update = () => {
-    const rect = triggerElement.getBoundingClientRect();
-    const progress = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0, 1);
-
-    layers.forEach((layer) => {
-      const element = triggerElement.querySelector(layer.selector);
-      if (!element) return;
-      const yPercent = layer.amount * progress;
-      element.style.transform = `translate(-50%, calc(-50% + ${yPercent}%))`;
-    });
-
-    frame = 0;
-  };
-
-  const requestUpdate = () => {
-    if (!frame) {
-      frame = window.requestAnimationFrame(update);
-    }
-  };
-
-  window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", requestUpdate);
-  requestUpdate();
-};
-
-const initParallax = () => {
-  const triggerElement = document.querySelector("[data-parallax-layers]");
-
-  if (!triggerElement) return;
-
-  if (window.gsap && window.ScrollTrigger && !prefersReducedMotion) {
-    const gsap = window.gsap;
-    const ScrollTrigger = window.ScrollTrigger;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerElement,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    [
-      { layer: "1", yPercent: 70 },
-      { layer: "2", yPercent: 55 },
-      { layer: "3", yPercent: 40 },
-      { layer: "4", yPercent: 10 },
-    ].forEach((layerObj, index) => {
-      timeline.to(
-        triggerElement.querySelectorAll(`[data-parallax-layer="${layerObj.layer}"]`),
-        {
-          yPercent: layerObj.yPercent,
-          ease: "none",
-        },
-        index === 0 ? 0 : "<"
-      );
-    });
-
-    if (window.Lenis) {
-      lenisScroller = new window.Lenis({
-        lerp: 0.09,
-        smoothWheel: true,
-      });
-
-      lenisScroller.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add((time) => {
-        lenisScroller.raf(time * 1000);
-      });
-      gsap.ticker.lagSmoothing(0);
-    }
-
-    return;
-  }
-
-  initParallaxFallback();
-};
-
 const initCarousel = () => {
   const carousel = document.querySelector("[data-carousel]");
 
@@ -567,12 +410,12 @@ const initCarousel = () => {
       const isCenter = pos === 0;
       const isAdjacent = Math.abs(pos) === 1;
 
-      card.style.transform = `translate(-50%, -50%) translateX(${pos * 45}%) scale(${
-        isCenter ? 1 : isAdjacent ? 0.85 : 0.7
-      }) rotateY(${pos * -10}deg)`;
+      card.style.transform = `translate(-50%, -50%) translateX(${pos * 50}%) translateZ(${
+        isCenter ? 80 : isAdjacent ? 0 : -90
+      }px) scale(${isCenter ? 1 : isAdjacent ? 0.84 : 0.68}) rotateY(${pos * -8}deg)`;
       card.style.zIndex = String(isCenter ? 10 : isAdjacent ? 5 : 1);
-      card.style.opacity = isCenter ? "1" : isAdjacent ? "0.4" : "0";
-      card.style.filter = isCenter ? "blur(0px)" : "blur(4px)";
+      card.style.opacity = isCenter ? "1" : isAdjacent ? "0.46" : "0";
+      card.style.filter = isCenter ? "blur(0px)" : "blur(3px)";
       card.style.visibility = Math.abs(pos) > 1 ? "hidden" : "visible";
     });
   };
@@ -590,7 +433,7 @@ const initCarousel = () => {
   const start = () => {
     if (prefersReducedMotion || cards.length < 2) return;
     stop();
-    timer = window.setInterval(next, 4000);
+    timer = window.setInterval(next, 4200);
   };
 
   const stop = () => {
@@ -797,11 +640,9 @@ const initFooterYear = () => {
 
 const init = () => {
   initMenuToggle();
-  initDock();
   initHeroIntro();
   initFloatingHero();
   initTextRotate();
-  initParallax();
   initCarousel();
   initGooeyText();
   initRevealObserver();

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Animated one-page experience that restores the original floating hero, spring dock, GSAP parallax, photo carousel, gooey text morphing, and gaming-glass footer."
+      content="Anime edit showcase and custom anime profile picture shop with animated previews, pack highlights, and commission-ready styles."
     />
-    <title>Afterglow Motion Lab</title>
+    <title>AniFrame Edits</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,71 +20,18 @@
     <div class="site-noise" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#hero" aria-label="Afterglow home">
+      <a class="brand" href="#hero" aria-label="AniFrame home">
         <span class="brand__mark">A</span>
         <span class="brand__copy">
-          <strong>Afterglow</strong>
-          <small>motion restore build</small>
+          <strong>AniFrame</strong>
+          <small>pfp edits studio</small>
         </span>
       </a>
 
-      <nav class="dock-nav" data-dock aria-label="Primary">
-        <a class="dock-nav__item" href="#hero" aria-label="Hero">
-          <span class="dock-nav__icon-shell">
-            <span class="dock-nav__icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 18V10.5L12 4l8 6.5V18" />
-                <path d="M9 18v-4h6v4" />
-              </svg>
-            </span>
-          </span>
-          <span class="dock-nav__tooltip">Hero</span>
-        </a>
-        <a class="dock-nav__item" href="#parallax" aria-label="Parallax">
-          <span class="dock-nav__icon-shell">
-            <span class="dock-nav__icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M3 18 8.5 11l4 4L16 9l5 9" />
-                <path d="M3 18h18" />
-              </svg>
-            </span>
-          </span>
-          <span class="dock-nav__tooltip">Parallax</span>
-        </a>
-        <a class="dock-nav__item" href="#showcase" aria-label="Showcase">
-          <span class="dock-nav__icon-shell">
-            <span class="dock-nav__icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M6 7h12a2 2 0 0 1 2 2v8H8a2 2 0 0 1-2-2z" />
-                <path d="M4 15V7a2 2 0 0 1 2-2h10" />
-              </svg>
-            </span>
-          </span>
-          <span class="dock-nav__tooltip">Cards</span>
-        </a>
-        <a class="dock-nav__item" href="#text-lab" aria-label="Text Morph">
-          <span class="dock-nav__icon-shell">
-            <span class="dock-nav__icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 6h14" />
-                <path d="M8 6c0 4 2 6 4 7 2-1 4-3 4-7" />
-                <path d="M9 18h6" />
-              </svg>
-            </span>
-          </span>
-          <span class="dock-nav__tooltip">Morph</span>
-        </a>
-        <a class="dock-nav__item" href="#footer" aria-label="Footer">
-          <span class="dock-nav__icon-shell">
-            <span class="dock-nav__icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 12c2.5-3.5 5-5.2 8-5.2s5.5 1.7 8 5.2" />
-                <path d="M4 12c2.5 3.5 5 5.2 8 5.2s5.5-1.7 8-5.2" />
-              </svg>
-            </span>
-          </span>
-          <span class="dock-nav__tooltip">Footer</span>
-        </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#showcase">Edits</a>
+        <a href="#packs">Packs</a>
+        <a href="#footer">Order</a>
       </nav>
 
       <button
@@ -105,11 +52,10 @@
     </header>
 
     <div class="mobile-menu" id="mobile-menu" hidden>
-      <a href="#hero">Hero</a>
-      <a href="#parallax">Parallax</a>
-      <a href="#showcase">Card Showcase</a>
-      <a href="#text-lab">Text Morph</a>
-      <a href="#footer">Footer</a>
+      <a href="#hero">Home</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#packs">PFP Packs</a>
+      <a href="#footer">Order</a>
     </div>
 
     <main>
@@ -118,176 +64,124 @@
         <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
 
         <div class="hero__floating" data-floating-root aria-hidden="true">
-          <div class="hero-float__item hero-float__item--one" data-depth="0.5" data-intro-delay="0.5">
+          <div class="hero-float__item hero-float__item--one" data-depth="0.7" data-intro-delay="0.45">
             <figure class="hero-card hero-card--one">
               <img
-                src="https://images.unsplash.com/photo-1727341554370-80e0fe9ad082?auto=format&fit=crop&w=900&q=80"
-                alt="Black and white close portrait"
+                src="assets/hero-image-1.jpg"
+                alt="Anime profile picture preview with soft edit style"
               />
             </figure>
           </div>
-          <div class="hero-float__item hero-float__item--two" data-depth="1" data-intro-delay="0.7">
+          <div class="hero-float__item hero-float__item--two" data-depth="1.3" data-intro-delay="0.55">
             <figure class="hero-card hero-card--two">
               <img
-                src="https://images.unsplash.com/photo-1640680608781-2e4199dd1579?auto=format&fit=crop&w=900&q=80"
-                alt="Neon botanical artwork"
+                src="assets/hero-image-6.jpg"
+                alt="Matching anime profile picture duo preview"
               />
             </figure>
           </div>
-          <div class="hero-float__item hero-float__item--three" data-depth="4" data-intro-delay="0.9">
+          <div class="hero-float__item hero-float__item--three" data-depth="2.2" data-intro-delay="0.65">
             <figure class="hero-card hero-card--three">
               <img
-                src="https://images.unsplash.com/photo-1726083085160-feeb4e1e5b00?auto=format&fit=crop&w=900&q=80"
-                alt="Blurred crowd scene"
+                src="assets/hero-image-3.jpg"
+                alt="Soft anime edit preview"
               />
             </figure>
           </div>
-          <div class="hero-float__item hero-float__item--four" data-depth="2" data-intro-delay="1.1">
+          <div class="hero-float__item hero-float__item--four" data-depth="1.1" data-intro-delay="0.75">
             <figure class="hero-card hero-card--four">
               <img
-                src="https://images.unsplash.com/photo-1562016600-ece13e8ba570?auto=format&fit=crop&w=900&q=80"
-                alt="Blue rippling water"
+                src="assets/hero-image-2.jpg"
+                alt="Anime profile picture icon preview"
               />
             </figure>
           </div>
-          <div class="hero-float__item hero-float__item--five" data-depth="1" data-intro-delay="1.3">
+          <div class="hero-float__item hero-float__item--five" data-depth="3.2" data-intro-delay="0.85">
             <figure class="hero-card hero-card--five">
               <img
-                src="https://images.unsplash.com/photo-1624344965199-ed40391d20f2?auto=format&fit=crop&w=900&q=80"
-                alt="Portrait under a bright blue sky"
+                src="assets/hero-image-4.jpg"
+                alt="Anime profile picture preview with light edit style"
+              />
+            </figure>
+          </div>
+          <div class="hero-float__item hero-float__item--six" data-depth="0.5" data-intro-delay="0.95">
+            <figure class="hero-card hero-card--six">
+              <img
+                src="assets/hero-image-5.jpg"
+                alt="Anime profile picture preview with clean crop"
+              />
+            </figure>
+          </div>
+          <div class="hero-float__item hero-float__item--seven" data-depth="1.8" data-intro-delay="1.05">
+            <figure class="hero-card hero-card--seven">
+              <img
+                src="assets/hero-image-2.jpg"
+                alt="Anime profile icon edit preview"
+              />
+            </figure>
+          </div>
+          <div class="hero-float__item hero-float__item--eight" data-depth="2.7" data-intro-delay="1.15">
+            <figure class="hero-card hero-card--eight">
+              <img
+                src="assets/hero-image-6.jpg"
+                alt="Matching anime icons edit preview"
               />
             </figure>
           </div>
         </div>
 
         <div class="hero__content">
+          <p class="hero__badge" data-hero-intro="badge">limited edit slots open</p>
           <h1 class="hero__title" data-hero-intro="title">
-            <span>Make your</span>
+            <span>Anime pfps</span>
             <span class="hero__title-row">
-              <span class="hero__title-static">website</span>
+              <span class="hero__title-static">made</span>
               <span
                 class="hero-rotate"
                 data-text-rotate
                 data-rotation-interval="3000"
-                data-stagger-duration="0.03"
+                data-stagger-duration="0.025"
                 data-stagger-from="last"
-                data-words='["fancy","fun","lovely \u2665","weird","\ud83e\udea9 funky","\ud83d\udc83\ud83d\udd7a","sexy","\ud83d\udd76\ufe0f cool","go \ud83d\ude80","\ud83d\udd25\ud83d\udd25\ud83d\udd25","over-animated?","pop \u2728","rock \ud83e\udd18"]'
+                data-words='["clean","soft","neon","dark","cinematic","matching","premium","for you"]'
               ></span>
             </span>
           </h1>
 
           <p class="hero__lede" data-hero-intro="copy">
-            With a growing library of ready-to-use components and
-            microinteractions. Free, open source, and now restored with the
-            original motion-heavy behavior intact.
+            Showcase-ready anime edits, matching profile picture sets, and
+            commission packs built for Discord, Instagram, TikTok, and creator
+            drops.
           </p>
 
           <div class="hero__actions" data-hero-intro="actions">
             <a class="button button--light" href="#showcase">
-              Check docs <span aria-hidden="true">&rarr;</span>
+              View edits <span aria-hidden="true">&rarr;</span>
             </a>
-            <a
-              class="button button--blue"
-              href="https://github.com/Ayurax/experimenting-with-3d-web"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span aria-hidden="true">&#9733;</span> on GitHub
+            <a class="button button--blue" href="#packs">
+              See packs
             </a>
           </div>
-        </div>
-      </section>
 
-      <section class="parallax-wrap" id="parallax">
-        <div class="parallax">
-          <section class="parallax__header">
-            <div class="parallax__visuals">
-              <div class="parallax__black-line-overflow"></div>
-              <div data-parallax-layers class="parallax__layers">
-                <img
-                  src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795be09b462b2e8ebf71_osmo-parallax-layer-3.webp"
-                  loading="eager"
-                  width="800"
-                  data-parallax-layer="1"
-                  alt=""
-                  class="parallax__layer-img"
-                />
-                <img
-                  src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795b4d5ac529e7d3a562_osmo-parallax-layer-2.webp"
-                  loading="eager"
-                  width="800"
-                  data-parallax-layer="2"
-                  alt=""
-                  class="parallax__layer-img"
-                />
-                <div data-parallax-layer="3" class="parallax__layer-title">
-                  <h2 class="parallax__title">Parallax</h2>
-                </div>
-                <img
-                  src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795bb5aceca85011ad83_osmo-parallax-layer-1.webp"
-                  loading="eager"
-                  width="800"
-                  data-parallax-layer="4"
-                  alt=""
-                  class="parallax__layer-img"
-                />
-              </div>
-              <div class="parallax__fade"></div>
-            </div>
-          </section>
-
-          <section class="parallax__content section">
-            <div class="parallax__content-copy reveal">
-              <p class="eyebrow">Scroll Area / GSAP layers</p>
-              <h2>Original depth choreography restored</h2>
-              <p>
-                This section now uses the intended layered scroll movement with
-                GSAP and Lenis-style smooth scrolling instead of a simplified
-                transform approximation.
-              </p>
-            </div>
-
-            <aside class="parallax__note reveal" aria-label="Parallax motion guide">
-              <p class="parallax__note-label">Motion map</p>
-              <div class="parallax__note-grid">
-                <div class="parallax__note-item">
-                  <span>Foreground</span>
-                  <strong>+70%</strong>
-                </div>
-                <div class="parallax__note-item">
-                  <span>Mid layer</span>
-                  <strong>+55%</strong>
-                </div>
-                <div class="parallax__note-item">
-                  <span>Title plane</span>
-                  <strong>+40%</strong>
-                </div>
-                <div class="parallax__note-item">
-                  <span>Rear layer</span>
-                  <strong>+10%</strong>
-                </div>
-              </div>
-              <p class="parallax__note-copy">
-                The reference file shipped with a source logo here, so this now
-                uses a small motion legend that actually explains the scroll
-                stack.
-              </p>
-            </aside>
-          </section>
+          <div class="hero__stats" data-hero-intro="stats" aria-label="Shop highlights">
+            <span>square crops</span>
+            <span>smooth color grade</span>
+            <span>Matching banners</span>
+          </div>
         </div>
       </section>
 
       <section class="showcase section" id="showcase">
         <div class="showcase__heading reveal">
-          <p class="eyebrow">Card photos showcase</p>
+          <p class="eyebrow">Edit showcase</p>
           <h2>
-            Edit your
-            <span class="showcase__gradient"> Photos </span>
-            on the go
+            Anime visuals with
+            <span class="showcase__gradient"> profile-ready </span>
+            polish
           </h2>
           <p>
-            The carousel is restored to the original 3D spread with timed
-            rotation, side blur, perspective transforms, and manual navigation.
+            Swipe through signature styles for pfps, edit thumbnails, banners,
+            and matching creator packs. The motion stays playful, but the shop
+            is focused on selling the work.
           </p>
         </div>
 
@@ -306,33 +200,53 @@
               <div class="feature-carousel__track">
                 <article class="feature-carousel__card">
                   <img
-                    src="https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?auto=format&fit=crop&w=900&q=80"
-                    alt="Professional portrait of a woman"
+                    src="assets/hero-image-1.jpg"
+                    alt="Anime edit showcase with soft profile crop"
                   />
+                  <figcaption>
+                    <strong>Soft Profile</strong>
+                    <span>clean crop, gentle grade, profile ready</span>
+                  </figcaption>
                 </article>
                 <article class="feature-carousel__card">
                   <img
-                    src="https://images.unsplash.com/photo-1526510747491-58f928ec870f?auto=format&fit=crop&w=900&q=80"
-                    alt="Scenic landscape with mountains and a lake"
+                    src="assets/hero-image-2.jpg"
+                    alt="Anime icon edit showcase"
                   />
+                  <figcaption>
+                    <strong>Icon Pop</strong>
+                    <span>sharp avatar focus, bright color, clean edge</span>
+                  </figcaption>
                 </article>
                 <article class="feature-carousel__card">
                   <img
-                    src="https://plus.unsplash.com/premium_photo-1670282392820-e3590c1c5c54?auto=format&fit=crop&w=900&q=80"
-                    alt="Artistic photo with flowers"
+                    src="assets/hero-image-3.jpg"
+                    alt="Anime edit showcase with warm styling"
                   />
+                  <figcaption>
+                    <strong>Warm Cut</strong>
+                    <span>soft light, balanced tone, smooth export</span>
+                  </figcaption>
                 </article>
                 <article class="feature-carousel__card">
                   <img
-                    src="https://images.unsplash.com/photo-1581403341630-a6e0b9d2d257?auto=format&fit=crop&w=900&q=80"
-                    alt="Colorful neon portrait"
+                    src="assets/hero-image-4.jpg"
+                    alt="Anime edit showcase with soft styling"
                   />
+                  <figcaption>
+                    <strong>Clean Glow</strong>
+                    <span>simple finish, light contrast, avatar polish</span>
+                  </figcaption>
                 </article>
                 <article class="feature-carousel__card">
                   <img
-                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
-                    alt="Creative portrait from behind"
+                    src="assets/hero-image-6.jpg"
+                    alt="Matching anime icons edit showcase"
                   />
+                  <figcaption>
+                    <strong>Matching Set</strong>
+                    <span>paired crop, matching mood, duo-ready files</span>
+                  </figcaption>
                 </article>
               </div>
             </div>
@@ -346,14 +260,13 @@
         </div>
       </section>
 
-      <section class="text-lab section" id="text-lab">
+      <section class="text-lab section" id="packs">
         <div class="text-lab__heading reveal">
-          <p class="eyebrow">Text morphing animation</p>
-          <h2>Gooey text restored with the original blur threshold effect</h2>
+          <p class="eyebrow">PFP packs</p>
+          <h2>Pick the energy, then make it yours</h2>
           <p>
-            The morph logic now mirrors the source component more closely,
-            including cooldown timing, blur interpolation, and cleanup-safe
-            frame handling.
+            The morphing text stays as a signature animation, now used to show
+            the edit moods customers can order.
           </p>
         </div>
 
@@ -361,7 +274,7 @@
           <div
             class="gooey-text"
             data-gooey
-            data-texts='["Design","Engineering","Is","Awesome"]'
+            data-texts='["Neon","Manga","Glitch","Soft","Dark","Custom"]'
             data-morph-time="1"
             data-cooldown-time="0.25"
           >
@@ -387,11 +300,26 @@
           </div>
 
           <aside class="text-lab__aside">
+            <div class="pack-list">
+              <div class="pack-list__item">
+                <span>Starter PFP</span>
+                <strong>$5</strong>
+              </div>
+              <div class="pack-list__item">
+                <span>Matching Duo</span>
+                <strong>$9</strong>
+              </div>
+              <div class="pack-list__item">
+                <span>Creator Kit</span>
+                <strong>$18</strong>
+              </div>
+            </div>
             <p>
-              Blur, opacity, and morph timing are now isolated to this
-              component so they no longer interfere with the hero rotation.
+              Send your character, favorite colors, handle, and platform size.
+              Final files are delivered as square crops with optional banner
+              versions.
             </p>
-            <a class="button button--ghost" href="#footer">Jump to footer</a>
+            <a class="button button--ghost" href="#footer">Start an order</a>
           </aside>
         </div>
       </section>
@@ -403,77 +331,57 @@
 
       <div class="site-footer__panel reveal">
         <div class="site-footer__brand">
-          <a href="#" class="site-footer__logo" aria-label="Mvpblocks home">
+          <a href="#hero" class="site-footer__logo" aria-label="AniFrame home">
             <span class="site-footer__logo-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M13 10V3L4 14h7v7l9-11h-7Z" />
               </svg>
             </span>
-            <span class="site-footer__logo-text">Mvpblocks</span>
+            <span class="site-footer__logo-text">AniFrame Edits</span>
           </a>
           <p class="site-footer__description">
-            Mvpblocks provides a set of reusable components and utilities to
-            help you create beautiful and responsive user interfaces quickly and
-            efficiently.
+            Custom anime profile pictures, edit covers, and matching creator
+            kits with bold color grading and clean exports.
           </p>
-          <div class="site-footer__socials">
-            <a href="#" aria-label="Twitter" class="site-footer__social-link">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.633 7.997c.013.176.013.353.013.53 0 5.387-4.099 11.605-11.604 11.605A11.561 11.561 0 0 1 0 18.29c.373.044.734.074 1.12.074a8.189 8.189 0 0 0 5.065-1.737 4.102 4.102 0 0 1-3.834-2.85c.25.04.5.065.765.065.37 0 .734-.049 1.08-.147A4.092 4.092 0 0 1 .8 8.582v-.05a4.119 4.119 0 0 0 1.853.522A4.099 4.099 0 0 1 .812 5.847c0-.02 0-.042.002-.062a11.653 11.653 0 0 0 8.457 4.287A4.62 4.62 0 0 1 22 5.924a8.215 8.215 0 0 0 2.018-.559 4.108 4.108 0 0 1-1.803 2.268 8.233 8.233 0 0 0 2.368-.648 8.897 8.897 0 0 1-2.062 2.112z" />
-              </svg>
-            </a>
-            <a href="#" aria-label="GitHub" class="site-footer__social-link">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 .29a12 12 0 0 0-3.797 23.401c.6.11.82-.26.82-.577v-2.17c-3.338.726-4.042-1.415-4.042-1.415-.546-1.387-1.332-1.756-1.332-1.756-1.09-.744.084-.729.084-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.306 3.495.999.106-.775.418-1.307.76-1.608-2.665-.301-5.466-1.332-5.466-5.933 0-1.31.469-2.381 1.236-3.222-.123-.303-.535-1.523.117-3.176 0 0 1.007-.322 3.301 1.23a11.502 11.502 0 0 1 6.002 0c2.292-1.552 3.297-1.23 3.297-1.23.654 1.653.242 2.873.119 3.176.77.841 1.235 1.912 1.235 3.222 0 4.61-2.805 5.629-5.476 5.925.429.369.813 1.096.813 2.211v3.285c0 .32.217.694.825.576A12 12 0 0 0 12 .29" />
-              </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="site-footer__social-link">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5v-14a5 5 0 0 0-5-5zm-11 19h-3v-9h3zm-1.5-10.268a1.752 1.752 0 1 1 0-3.505 1.752 1.752 0 0 1 0 3.505zm15.5 10.268h-3v-4.5c0-1.07-.02-2.45-1.492-2.45-1.495 0-1.725 1.166-1.725 2.372v4.578h-3v-9h2.88v1.23h.04a3.157 3.157 0 0 1 2.847-1.568c3.042 0 3.605 2.003 3.605 4.612v4.726z" />
-              </svg>
-            </a>
-          </div>
         </div>
 
-        <nav class="site-footer__nav" aria-label="Footer links">
+        <nav class="site-footer__nav" aria-label="Order links">
           <div class="site-footer__menu">
-            <div class="site-footer__menu-title">Product</div>
+            <div class="site-footer__menu-title">Packs</div>
             <ul>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Integrations</a></li>
-              <li><a href="#">Updates</a></li>
+              <li><a href="#packs">Starter PFP</a></li>
+              <li><a href="#packs">Matching Duo</a></li>
+              <li><a href="#packs">Creator Kit</a></li>
+              <li><a href="#showcase">Showcase</a></li>
             </ul>
           </div>
           <div class="site-footer__menu">
-            <div class="site-footer__menu-title">Company</div>
+            <div class="site-footer__menu-title">Styles</div>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#showcase">Neon</a></li>
+              <li><a href="#showcase">Manga</a></li>
+              <li><a href="#showcase">Glitch</a></li>
+              <li><a href="#showcase">Soft glow</a></li>
             </ul>
           </div>
           <div class="site-footer__menu">
-            <div class="site-footer__menu-title">Resources</div>
+            <div class="site-footer__menu-title">Order</div>
             <ul>
-              <li><a href="#">Docs</a></li>
-              <li><a href="#">Community</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Security</a></li>
+              <li><a href="mailto:orders@aniframe.example">Email</a></li>
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Terms</a></li>
             </ul>
           </div>
         </nav>
       </div>
 
       <div class="site-footer__legal">
-        <span>&copy; 2025 Mvpblocks. All rights reserved.</span>
+        <span>&copy; <span id="year">2026</span> AniFrame Edits. Custom anime visuals for personal profiles and creators.</span>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
     <script src="js/script.js" defer></script>
   </body>
 </html>
