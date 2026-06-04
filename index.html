@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Anime edit showcase and custom anime profile picture shop with animated previews, pack highlights, and commission-ready styles."
+      content="Anime AMV editing studio selling cinematic edits, beat-sync reels, lyric cuts, and creator-ready anime video packages."
     />
-    <title>AniFrame Edits</title>
+    <title>AniFrame AMV Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="site-noise" aria-hidden="true"></div>
+    <div class="site-grain" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#hero" aria-label="AniFrame home">
-        <span class="brand__mark">A</span>
+      <a class="brand" href="#hero" aria-label="AniFrame AMV home">
+        <span class="brand__mark">AF</span>
         <span class="brand__copy">
           <strong>AniFrame</strong>
-          <small>pfp edits studio</small>
+          <small>AMV studio</small>
         </span>
       </a>
 
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#showcase">Edits</a>
-        <a href="#packs">Packs</a>
-        <a href="#footer">Order</a>
+        <a href="#work">Work</a>
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#order">Order</a>
       </nav>
 
       <button
@@ -39,347 +40,338 @@
         type="button"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        aria-label="Open navigation"
+        aria-label="Open menu"
       >
-        <svg class="menu-toggle__icon" viewBox="0 0 32 32">
-          <path
-            class="menu-toggle__path menu-toggle__path--curve"
-            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
-          />
-          <path class="menu-toggle__path" d="M7 16 27 16" />
-        </svg>
+        <span></span>
+        <span></span>
       </button>
     </header>
 
     <div class="mobile-menu" id="mobile-menu" hidden>
-      <a href="#hero">Home</a>
-      <a href="#showcase">Showcase</a>
-      <a href="#packs">PFP Packs</a>
-      <a href="#footer">Order</a>
+      <a href="#work">Work</a>
+      <a href="#packages">Packages</a>
+      <a href="#process">Process</a>
+      <a href="#order">Order</a>
     </div>
 
     <main>
-      <section class="hero section" id="hero">
-        <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
-        <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+      <section class="hero" id="hero">
+        <div class="hero__backdrop" aria-hidden="true">
+          <img
+            src="images/images%20for%20hero/arima%20kana%20icon.jpg"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
 
-        <div class="hero__floating" data-floating-root aria-hidden="true">
-          <div class="hero-float__item hero-float__item--one" data-depth="0.7" data-intro-delay="0.45">
-            <figure class="hero-card hero-card--one">
-              <img
-                src="images/images%20for%20hero/2_2%20touka.jpg"
-                alt="Anime profile picture preview with soft edit style"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </figure>
+        <div class="hero__rail" data-floating-root aria-hidden="true">
+          <figure class="float-frame float-frame--one" data-depth="0.8">
+            <img
+              src="images/images%20for%20hero/2_2%20touka.jpg"
+              alt=""
+              decoding="async"
+            />
+          </figure>
+          <figure class="float-frame float-frame--two" data-depth="1.4">
+            <img
+              src="images/images%20for%20hero/download%20(6).jpg"
+              alt=""
+              decoding="async"
+            />
+          </figure>
+          <figure class="float-frame float-frame--three" data-depth="2.1">
+            <img
+              src="images/for%20pf%20showcase/download%20(7).jpg"
+              alt=""
+              decoding="async"
+            />
+          </figure>
+        </div>
+
+        <div class="hero__content reveal">
+          <p class="eyebrow">Custom anime music videos</p>
+          <h1 data-minimal-text>AMVs cut for the part people replay.</h1>
+          <p>
+            Beat-sync edits, cinematic character reels, lyric cuts, and
+            short-form anime drops built for YouTube, TikTok, Instagram, and
+            Discord launches.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#order">
+              Book an edit <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="button button--quiet" href="#work">
+              View cuts
+            </a>
           </div>
-          <div class="hero-float__item hero-float__item--two" data-depth="1.3" data-intro-delay="0.55">
-            <figure class="hero-card hero-card--two">
-              <img
-                src="images/images%20for%20hero/arima%20kana%20icon.jpg"
-                alt="Matching anime profile picture duo preview"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </figure>
+
+          <dl class="hero__proof" aria-label="AMV shop highlights">
+            <div>
+              <dt>9:16</dt>
+              <dd>shorts ready</dd>
+            </div>
+            <div>
+              <dt>4K</dt>
+              <dd>export option</dd>
+            </div>
+            <div>
+              <dt>48h</dt>
+              <dd>rush slots</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__player reveal" aria-label="Featured AMV edit">
+          <div class="player-frame" data-tilt-card>
+            <img
+              src="images/for%20pf%20showcase/cre%20app_%20tensor%20AI.jpg"
+              alt="Featured anime AMV edit frame"
+              decoding="async"
+            />
+            <div class="frame-strip" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="player-frame__overlay">
+              <span class="play-mark" aria-hidden="true"></span>
+              <span>signature cut</span>
+            </div>
           </div>
-          <div class="hero-float__item hero-float__item--three" data-depth="2.2" data-intro-delay="0.65">
-            <figure class="hero-card hero-card--three">
+          <div class="visualizer" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section work" id="work">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Edit direction</p>
+          <h2>Every cut sells a mood before it sells an effect.</h2>
+        </div>
+
+        <div class="cut-carousel reveal" data-work-carousel>
+          <button type="button" class="cut-carousel__button cut-carousel__button--left" data-carousel-prev aria-label="Previous image">
+            <span aria-hidden="true">←</span>
+          </button>
+
+          <div class="cut-grid" data-carousel-track>
+            <article class="cut-card" data-carousel-card>
               <img
-                src="images/images%20for%20hero/download%20(6).jpg"
-                alt="Soft anime edit preview"
+                src="images/for%20pf%20showcase/download%20(4).jpg"
+                alt="Soft anime AMV frame"
                 decoding="async"
               />
-            </figure>
-          </div>
-          <div class="hero-float__item hero-float__item--four" data-depth="1.1" data-intro-delay="0.75">
-            <figure class="hero-card hero-card--four">
+              <div>
+                <span>01</span>
+                <h3>Emotion sync</h3>
+                <p>Clean pacing, soft impact hits, and scene choices built around the lyric.</p>
+              </div>
+            </article>
+
+            <article class="cut-card cut-card--wide" data-carousel-card>
               <img
                 src="images/images%20for%20hero/%E2%94%87%E0%BC%84%20%E2%9D%9B%20%F0%9D%99%88%F0%9D%99%96%F0%9D%99%A9%F0%9D%99%98%F0%9D%99%9D%F0%9D%99%9E%F0%9D%99%A3%F0%9D%99%9C%20%F0%9D%99%84%F0%9D%99%98%F0%9D%99%A4%F0%9D%99%A3%F0%9D%99%A8%20%E2%9D%9C.jpg"
-                alt="Anime profile picture icon preview"
+                alt="Matching anime icons AMV frame"
                 decoding="async"
               />
-            </figure>
-          </div>
-          <div class="hero-float__item hero-float__item--five" data-depth="3.2" data-intro-delay="0.85">
-            <figure class="hero-card hero-card--five">
+              <div>
+                <span>02</span>
+                <h3>Hook-first reels</h3>
+                <p>Open with the strongest face, movement, or flash so the scroll stops immediately.</p>
+              </div>
+            </article>
+
+            <article class="cut-card" data-carousel-card>
               <img
-                src="images/images%20for%20hero/%E0%AA%9C%E2%81%80%E2%9E%B4%20%E2%99%A1%EA%A9%87%D7%81%D7%85%DD%8A%D6%AA%20%C9%91%D7%81%D7%85t%D7%81%D7%85%E1%9D%AF%D7%81%D6%92h%D7%81%D7%85%D6%AE%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%DD%8A%EA%AA%80%E1%A7%81%D7%81%E1%A7%81%D7%81%20%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%E1%9D%AF%D7%81%D6%92%E1%A8%B5%D7%81%D7%85%D7%85%DD%8A%EA%AA%80%D7%85%EA%AF%B1%D7%85%EA%AF%B1%D7%85%EA%AF%B1%20%20%F0%96%A4%90%E2%AD%92%E0%B9%8B%E0%A3%AD%20%E2%AD%91.jpg"
-                alt="Anime profile picture preview with light edit style"
+                src="images/for%20pf%20showcase/Th%E1%BA%A7n%20ch%C3%BA%20t%C3%ACnh%20y%C3%AAu.jpg"
+                alt="Romantic anime AMV frame"
                 decoding="async"
               />
-            </figure>
-          </div>
-          <div class="hero-float__item hero-float__item--six" data-depth="0.5" data-intro-delay="0.95">
-            <figure class="hero-card hero-card--six">
-              <img
-                src="images/images%20for%20hero/%E0%AA%9C%E2%81%80%E2%9E%B4%20%E2%99%A1%EA%A9%87%D7%81%D7%85%DD%8A%D6%AA%20%C9%91%D7%81%D7%85t%D7%81%D7%85%E1%9D%AF%D7%81%D6%92h%D7%81%D7%85%D6%AE%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%DD%8A%EA%AA%80%E1%A7%81%D7%81%E1%A7%81%D7%81%20%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%E1%9D%AF%D7%81%D6%92%E1%A8%B5%D7%81%D7%85%D7%85%DD%8A%EA%AA%80%D7%85%EA%AF%B1%D7%85%EA%AF%B1%D7%85%EA%AF%B1%20%20%F0%96%A4%90%E2%AD%92%E0%B9%8B%E0%A3%AD%20%E2%AD%91%20(1).jpg"
-                alt="Anime profile picture preview with clean crop"
-                decoding="async"
-              />
-            </figure>
-          </div>
-          <div class="hero-float__item hero-float__item--seven" data-depth="1.8" data-intro-delay="1.05">
-            <figure class="hero-card hero-card--seven hero-card--accent"></figure>
-          </div>
-          <div class="hero-float__item hero-float__item--eight" data-depth="2.7" data-intro-delay="1.15">
-            <figure class="hero-card hero-card--eight hero-card--accent"></figure>
-          </div>
-        </div>
-
-        <div class="hero__content">
-          <p class="hero__badge" data-hero-intro="badge">limited edit slots open</p>
-          <h1 class="hero__title" data-hero-intro="title">
-            <span>Anime pfps</span>
-            <span class="hero__title-row">
-              <span class="hero__title-static">made</span>
-              <span
-                class="hero-rotate"
-                data-text-rotate
-                data-rotation-interval="3000"
-                data-stagger-duration="0.025"
-                data-stagger-from="last"
-                data-words='["clean","soft","neon","dark","cinematic","matching","premium","for you"]'
-              ></span>
-            </span>
-          </h1>
-
-          <p class="hero__lede" data-hero-intro="copy">
-            Showcase-ready anime edits, matching profile picture sets, and
-            commission packs built for Discord, Instagram, TikTok, and creator
-            drops.
-          </p>
-
-          <div class="hero__actions" data-hero-intro="actions">
-            <a class="button button--light" href="#showcase">
-              View edits <span aria-hidden="true">&rarr;</span>
-            </a>
-            <a class="button button--blue" href="#packs">
-              See packs
-            </a>
+              <div>
+                <span>03</span>
+                <h3>Character focus</h3>
+                <p>Color, speed ramps, shakes, and typography shaped around one character.</p>
+              </div>
+            </article>
           </div>
 
-          <div class="hero__stats" data-hero-intro="stats" aria-label="Shop highlights">
-            <span>square crops</span>
-            <span>smooth color grade</span>
-            <span>Matching banners</span>
-          </div>
+          <button type="button" class="cut-carousel__button cut-carousel__button--right" data-carousel-next aria-label="Next image">
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
       </section>
 
-      <section class="showcase section" id="showcase">
-        <div class="showcase__heading reveal">
-          <p class="eyebrow">Edit showcase</p>
-          <h2>
-            Anime visuals with
-            <span class="showcase__gradient"> profile-ready </span>
-            polish
-          </h2>
-          <p>
-            Swipe through signature styles for pfps, edit thumbnails, banners,
-            and matching creator packs. The motion stays playful, but the shop
-            is focused on selling the work.
-          </p>
-        </div>
-
-        <div class="showcase__stage reveal">
-          <div class="showcase__halo showcase__halo--left" aria-hidden="true"></div>
-          <div class="showcase__halo showcase__halo--right" aria-hidden="true"></div>
-
-          <div class="feature-carousel" data-carousel>
-            <button class="feature-carousel__button" type="button" data-carousel-prev aria-label="Previous image">
-              <svg viewBox="0 0 24 24">
-                <path d="m15 18-6-6 6-6" />
-              </svg>
-            </button>
-
-            <div class="feature-carousel__viewport">
-              <div class="feature-carousel__track">
-                <article class="feature-carousel__card">
-                  <img
-                    src="images/for%20pf%20showcase/cre%20app_%20tensor%20AI.jpg"
-                    alt="Anime edit showcase with soft profile crop"
-                  />
-                  <figcaption>
-                    <strong>Soft Profile</strong>
-                    <span>clean crop, gentle grade, profile ready</span>
-                  </figcaption>
-                </article>
-                <article class="feature-carousel__card">
-                  <img
-                    src="images/for%20pf%20showcase/download%20(4).jpg"
-                    alt="Anime icon edit showcase"
-                  />
-                  <figcaption>
-                    <strong>Icon Pop</strong>
-                    <span>sharp avatar focus, bright color, clean edge</span>
-                  </figcaption>
-                </article>
-                <article class="feature-carousel__card">
-                  <img
-                    src="images/for%20pf%20showcase/download%20(5).jpg"
-                    alt="Anime edit showcase with warm styling"
-                  />
-                  <figcaption>
-                    <strong>Warm Cut</strong>
-                    <span>soft light, balanced tone, smooth export</span>
-                  </figcaption>
-                </article>
-                <article class="feature-carousel__card">
-                  <img
-                    src="images/for%20pf%20showcase/download%20(7).jpg"
-                    alt="Anime edit showcase with soft styling"
-                  />
-                  <figcaption>
-                    <strong>Clean Glow</strong>
-                    <span>simple finish, light contrast, avatar polish</span>
-                  </figcaption>
-                </article>
-                <article class="feature-carousel__card">
-                  <img
-                    src="images/for%20pf%20showcase/Th%E1%BA%A7n%20ch%C3%BA%20t%C3%ACnh%20y%C3%AAu.jpg"
-                    alt="Matching anime icons edit showcase"
-                  />
-                  <figcaption>
-                    <strong>Matching Set</strong>
-                    <span>paired crop, matching mood, duo-ready files</span>
-                  </figcaption>
-                </article>
-              </div>
-            </div>
-
-            <button class="feature-carousel__button" type="button" data-carousel-next aria-label="Next image">
-              <svg viewBox="0 0 24 24">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="text-lab section" id="packs">
-        <div class="text-lab__heading reveal">
-          <p class="eyebrow">PFP packs</p>
-          <h2>Pick the energy, then make it yours</h2>
-          <p>
-            The morphing text stays as a signature animation, now used to show
-            the edit moods customers can order.
-          </p>
-        </div>
-
-        <div class="text-lab__panel reveal">
-          <div
-            class="gooey-text"
-            data-gooey
-            data-texts='["Neon","Manga","Glitch","Soft","Dark","Custom"]'
-            data-morph-time="1"
-            data-cooldown-time="0.25"
-          >
-            <svg class="gooey-text__defs" aria-hidden="true" focusable="false">
-              <defs>
-                <filter id="threshold">
-                  <feColorMatrix
-                    in="SourceGraphic"
-                    type="matrix"
-                    values="1 0 0 0 0
-                            0 1 0 0 0
-                            0 0 1 0 0
-                            0 0 0 255 -140"
-                  ></feColorMatrix>
-                </filter>
-              </defs>
-            </svg>
-
-            <div class="gooey-text__stage">
-              <span class="gooey-text__item" data-gooey-primary></span>
-              <span class="gooey-text__item" data-gooey-secondary></span>
-            </div>
-          </div>
-
-          <aside class="text-lab__aside">
-            <div class="pack-list">
-              <div class="pack-list__item">
-                <span>Starter PFP</span>
-                <strong>$5</strong>
-              </div>
-              <div class="pack-list__item">
-                <span>Matching Duo</span>
-                <strong>$9</strong>
-              </div>
-              <div class="pack-list__item">
-                <span>Creator Kit</span>
-                <strong>$18</strong>
-              </div>
-            </div>
+      <section class="section reel-section" aria-label="AMV sample reel">
+        <div class="reel-shell reveal">
+          <div class="reel-copy">
+            <p class="eyebrow">Sample reel</p>
+            <h2>Preview the cut style.</h2>
             <p>
-              Send your character, favorite colors, handle, and platform size.
-              Final files are delivered as square crops with optional banner
-              versions.
+              Swap between AMV moods and see how the offer changes from
+              short-form punch to full cinematic edit.
             </p>
-            <a class="button button--ghost" href="#footer">Start an order</a>
-          </aside>
+          </div>
+
+          <div class="reel-preview" data-reel>
+            <img
+              src="images/for%20pf%20showcase/download%20(5).jpg"
+              alt="Anime AMV preview frame"
+              data-reel-image
+              decoding="async"
+            />
+            <div class="reel-preview__meta">
+              <span data-reel-label>velocity romance</span>
+              <strong data-reel-time>00:18</strong>
+            </div>
+          </div>
+
+          <div class="reel-controls" aria-label="Reel mood selector">
+            <button
+              class="is-active"
+              type="button"
+              data-reel-src="images/for%20pf%20showcase/download%20(5).jpg"
+              data-reel-label="velocity romance"
+              data-reel-time="00:18"
+            >
+              Romance
+            </button>
+            <button
+              type="button"
+              data-reel-src="images/images%20for%20hero/%E0%AA%9C%E2%81%80%E2%9E%B4%20%E2%99%A1%EA%A9%87%D7%81%D7%85%DD%8A%D6%AA%20%C9%91%D7%81%D7%85t%D7%81%D7%85%E1%9D%AF%D7%81%D6%92h%D7%81%D7%85%D6%AE%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%DD%8A%EA%AA%80%E1%A7%81%D7%81%E1%A7%81%D7%81%20%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%E1%9D%AF%D7%81%D6%92%E1%A8%B5%D7%81%D7%85%D7%85%DD%8A%EA%AA%80%D7%85%EA%AF%B1%D7%85%EA%AF%B1%D7%85%EA%AF%B1%20%20%F0%96%A4%90%E2%AD%92%E0%B9%8B%E0%A3%AD%20%E2%AD%91.jpg"
+              data-reel-label="dark sync cut"
+              data-reel-time="00:32"
+            >
+              Dark
+            </button>
+            <button
+              type="button"
+              data-reel-src="images/images%20for%20hero/%E0%AA%9C%E2%81%80%E2%9E%B4%20%E2%99%A1%EA%A9%87%D7%81%D7%85%DD%8A%D6%AA%20%C9%91%D7%81%D7%85t%D7%81%D7%85%E1%9D%AF%D7%81%D6%92h%D7%81%D7%85%D6%AE%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%DD%8A%EA%AA%80%E1%A7%81%D7%81%E1%A7%81%D7%81%20%EA%AA%B1%D7%81%D7%85%D7%81%D7%85%D7%81%D7%85%E1%9D%AF%D7%81%D6%92%E1%A8%B5%D7%81%D7%85%D7%85%DD%8A%EA%AA%80%D7%85%EA%AF%B1%D7%85%EA%AF%B1%D7%85%EA%AF%B1%20%20%F0%96%A4%90%E2%AD%92%E0%B9%8B%E0%A3%AD%20%E2%AD%91%20(1).jpg"
+              data-reel-label="clean character reel"
+              data-reel-time="00:24"
+            >
+              Clean
+            </button>
+          </div>
         </div>
+      </section>
+
+      <section class="section packages" id="packages">
+        <div class="section-heading reveal">
+          <p class="eyebrow">AMV packages</p>
+          <h2>Pick the edit built for where it will drop.</h2>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card reveal">
+            <span class="package-card__tag">Short form</span>
+            <h3>Viral loop</h3>
+            <p>12-20 seconds, hook-first pacing, captions, effects, and platform crop.</p>
+            <strong>$35+</strong>
+            <a href="#order">Start loop</a>
+          </article>
+
+          <article class="package-card package-card--featured reveal">
+            <span class="package-card__tag">Best seller</span>
+            <h3>Full AMV</h3>
+            <p>35-60 seconds with beat sync, transitions, scene matching, color grade, and sound polish.</p>
+            <strong>$85+</strong>
+            <a href="#order">Book full cut</a>
+          </article>
+
+          <article class="package-card reveal">
+            <span class="package-card__tag">Creator pack</span>
+            <h3>Drop kit</h3>
+            <p>AMV, thumbnail frame, banner crop, teaser loop, and vertical exports.</p>
+            <strong>$140+</strong>
+            <a href="#order">Build kit</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process" id="process">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Production flow</p>
+          <h2>Made like a real edit, not a preset dump.</h2>
+        </div>
+
+        <ol class="process-list">
+          <li class="reveal">
+            <span>01</span>
+            <h3>Brief</h3>
+            <p>Anime, character, song, runtime, platform, and edit references.</p>
+          </li>
+          <li class="reveal">
+            <span>02</span>
+            <h3>Cut</h3>
+            <p>Scene selection, rhythm pass, impact frames, transitions, and typography.</p>
+          </li>
+          <li class="reveal">
+            <span>03</span>
+            <h3>Polish</h3>
+            <p>Color, shakes, overlays, export crops, and one revision pass.</p>
+          </li>
+        </ol>
       </section>
     </main>
 
-    <footer class="site-footer" id="footer">
-      <div class="site-footer__glow site-footer__glow--left" aria-hidden="true"></div>
-      <div class="site-footer__glow site-footer__glow--right" aria-hidden="true"></div>
-
-      <div class="site-footer__panel reveal">
-        <div class="site-footer__brand">
-          <a href="#hero" class="site-footer__logo" aria-label="AniFrame home">
-            <span class="site-footer__logo-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M13 10V3L4 14h7v7l9-11h-7Z" />
-              </svg>
-            </span>
-            <span class="site-footer__logo-text">AniFrame Edits</span>
-          </a>
-          <p class="site-footer__description">
-            Custom anime profile pictures, edit covers, and matching creator
-            kits with bold color grading and clean exports.
-          </p>
-        </div>
-
-        <nav class="site-footer__nav" aria-label="Order links">
-          <div class="site-footer__menu">
-            <div class="site-footer__menu-title">Packs</div>
-            <ul>
-              <li><a href="#packs">Starter PFP</a></li>
-              <li><a href="#packs">Matching Duo</a></li>
-              <li><a href="#packs">Creator Kit</a></li>
-              <li><a href="#showcase">Showcase</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__menu">
-            <div class="site-footer__menu-title">Styles</div>
-            <ul>
-              <li><a href="#showcase">Neon</a></li>
-              <li><a href="#showcase">Manga</a></li>
-              <li><a href="#showcase">Glitch</a></li>
-              <li><a href="#showcase">Soft glow</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__menu">
-            <div class="site-footer__menu-title">Order</div>
-            <ul>
-              <li><a href="mailto:orders@aniframe.example">Email</a></li>
-              <li><a href="#">Discord</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Terms</a></li>
-            </ul>
-          </div>
-        </nav>
+    <footer class="site-footer" id="order">
+      <div class="footer-poster reveal">
+        <img
+          src="images/images%20for%20hero/arima%20kana%20icon.jpg"
+          alt="Anime AMV order visual"
+          decoding="async"
+        />
       </div>
 
-      <div class="site-footer__legal">
-        <span>&copy; <span id="year">2026</span> AniFrame Edits. Custom anime visuals for personal profiles and creators.</span>
+      <div class="footer-order reveal">
+        <p class="eyebrow">Commission queue</p>
+        <h2>Send the song. Send the anime. Get the cut.</h2>
+        <p>
+          For orders, include runtime, platform, deadline, song link, anime
+          name, character focus, and references.
+        </p>
+        <a class="button button--primary" href="mailto:orders@aniframe.example?subject=AMV%20commission%20request">
+          Order by email <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="site-footer__bar">
+        <span>AniFrame AMV Studio</span>
+        <span>&copy; <span id="year"></span></span>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
     <script src="js/script.js" defer></script>
   </body>
 </html>
