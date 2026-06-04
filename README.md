@@ -4,7 +4,7 @@ A clean, cinematic landing page for an anime AMV editing studio. The site presen
 
 ## Open the Website
 
-- [Open the homepage](./index.html)
+https://ayurax.github.io/cutthroat-sync/
 
 ## Project Overview
 
