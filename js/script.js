@@ -199,15 +199,40 @@ const initFloatingHero = () => {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   };
-  const sensitivity = -0.32;
-  const easingFactor = 0.08;
+  const sensitivity = -0.28;
+  const easingFactor = 0.12;
+  let bounds = {
+    left: 0,
+    top: 0,
+    width: floatingRoot.clientWidth,
+    height: floatingRoot.clientHeight,
+  };
   let isActive = false;
   let frameId = 0;
+  let boundsFrameId = 0;
+
+  const refreshBounds = () => {
+    const rect = floatingRoot.getBoundingClientRect();
+    bounds = {
+      left: rect.left,
+      top: rect.top,
+      width: rect.width,
+      height: rect.height,
+    };
+  };
+
+  const queueBoundsRefresh = () => {
+    if (boundsFrameId) return;
+
+    boundsFrameId = window.requestAnimationFrame(() => {
+      boundsFrameId = 0;
+      refreshBounds();
+    });
+  };
 
   const updatePosition = (clientX, clientY) => {
-    const rect = floatingRoot.getBoundingClientRect();
-    mousePosition.x = clientX - rect.left;
-    mousePosition.y = clientY - rect.top;
+    mousePosition.x = clientX - bounds.left;
+    mousePosition.y = clientY - bounds.top;
   };
 
   const tick = () => {
@@ -220,8 +245,8 @@ const initFloatingHero = () => {
 
     items.forEach((item) => {
       const strength = (item.depth * sensitivity) / 20;
-      const targetX = (mousePosition.x - floatingRoot.offsetWidth / 2) * strength;
-      const targetY = (mousePosition.y - floatingRoot.offsetHeight / 2) * strength;
+      const targetX = (mousePosition.x - bounds.width / 2) * strength;
+      const targetY = (mousePosition.y - bounds.height / 2) * strength;
       const dx = targetX - item.current.x;
       const dy = targetY - item.current.y;
 
@@ -242,38 +267,32 @@ const initFloatingHero = () => {
     }
   };
 
+  refreshBounds();
+
   const requestTick = () => {
     if (isActive && !frameId) {
       frameId = window.requestAnimationFrame(tick);
     }
   };
 
-  window.addEventListener(
-    "mousemove",
-    (event) => {
-      updatePosition(event.clientX, event.clientY);
-      requestTick();
-    },
-    { passive: true }
-  );
+  const handlePointerMove = (event) => {
+    updatePosition(event.clientX, event.clientY);
+    requestTick();
+  };
 
-  window.addEventListener(
-    "touchmove",
-    (event) => {
-      const touch = event.touches[0];
-      if (touch) {
-        updatePosition(touch.clientX, touch.clientY);
-        requestTick();
-      }
-    },
-    { passive: true }
-  );
+  window.addEventListener("pointermove", handlePointerMove, { passive: true });
+  window.addEventListener("resize", queueBoundsRefresh, { passive: true });
+  window.addEventListener("scroll", queueBoundsRefresh, { passive: true });
 
   const observer = new IntersectionObserver(
     ([entry]) => {
       isActive = entry?.isIntersecting ?? false;
       if (isActive) {
+        refreshBounds();
         requestTick();
+      } else if (frameId) {
+        window.cancelAnimationFrame(frameId);
+        frameId = 0;
       }
     },
     { threshold: 0.05 }
